@@ -26,10 +26,10 @@ body {
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
 }
 main {
-  background: url("./images/iphone.webp") no-repeat;
+  background: url(./images/iphone.webp) no-repeat;
   background-size: contain;
-  width: 320px;
-  height: 640px;
+  width: 300px;
+  height: 600px;
   display: flex;
   position: relative;
 }
@@ -42,8 +42,8 @@ section {
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  padding: 16px 6px;
-  margin: 24px;
+  padding: 16px 10px;
+  margin: 20px;
 }
 
 header {
@@ -82,24 +82,24 @@ footer {
 
     &.is-big {
       background-size: 250px;
-      width: 48px;
-      height: 48px;
+      width: 44px;
+      height: 44px;
     }
 
     &.is-undo {
-      background-position: -140px 0;
+      background-position: -142px 0;
     }
 
     &.is-remove {
-      background-position: -150px 0;
+      background-position: -153px 0;
     }
 
     &.is-fav {
-      background-position: -50px 0;
+      background-position: -51px 0;
     }
 
     &.is-star {
-      background-position: -70px 0px;
+      background-position: -71px 0px;
     }
   }
 }
@@ -110,7 +110,7 @@ footer {
   height: 100%;
   margin: 0 auto;
 
-  & > span {
+  & > p {
     display: grid;
     place-content: center;
     color: #777;
