@@ -21,6 +21,10 @@ body {
   font-size: 16px;
 }
 
+ul li {
+  list-style: none;
+}
+
 .main {
   min-height: 100vh;
   width: 100%;
@@ -144,4 +148,9 @@ body {
 .completada {
   background-color: rgba(var(--color-completada), 0.4);
   border-bottom-color: rgb(var(--color-completada));
+}
+
+.date {
+  width: 100%;
+  padding: 15px;
 }
