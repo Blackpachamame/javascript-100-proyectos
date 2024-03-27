@@ -60,15 +60,26 @@ ul li {
   margin-bottom: 20px;
 }
 
-.inputForm {
+.inputTask {
   width: 100%;
+  height: 46px;
   padding: 10px 15px;
   border: 2px solid var(--color-sky-blue);
   border-radius: 5px 0 0 5px;
   outline: none;
 }
 
+.inputDate {
+  width: 100%;
+  height: 46px;
+  padding: 10px 15px;
+  border: 2px solid var(--color-sky-blue);
+  border-left: 0;
+  outline: none;
+}
+
 .btnCreate {
+  height: 46px;
   padding: 12px 15px;
   background-image: linear-gradient(
     109.6deg,

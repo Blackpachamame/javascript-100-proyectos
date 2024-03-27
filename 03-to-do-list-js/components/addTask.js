@@ -20,9 +20,12 @@ export const addTask = (evento) => {
     input.value = '';
     calendar.value = '';
 
+    const complete = false;
+
     const taskObj = {
         value,
         dateFormat,
+        complete,
     };
 
     list.innerHTML = '';
@@ -34,7 +37,7 @@ export const addTask = (evento) => {
     displayTasks();
 };
 
-export const createTask = ({ value, dateFormat }) => {
+export const createTask = ({ value, dateFormat, complete }) => {
     const task = document.createElement('li');
     task.classList.add('card');
 
@@ -50,7 +53,7 @@ export const createTask = ({ value, dateFormat }) => {
     dateElement.innerHTML = dateFormat;
 
     task.appendChild(taskContent);
-    task.appendChild(dateElement);
+    // task.appendChild(dateElement);
     task.appendChild(deleteIcon());
     return task;
 };
