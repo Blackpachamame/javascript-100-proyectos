@@ -22,3 +22,8 @@ Existen otros métodos que podemos utilizar para manipular nodos:
 ### Extras
 
 - **Immediately invoked function expression** o bien por sus siglas: IIFE, son funciones que en cuanto se declaran, se ejecutan.
+
+### Recursos
+
+- [Moment.js](https://momentjs.com/): Analiza, valida, manipula y muestra fechas y horas en JavaScript.
+- [uuid](https://github.com/uuidjs/uuid): Genera ids aleatorios.
