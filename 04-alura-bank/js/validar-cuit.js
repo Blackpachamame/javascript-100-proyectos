@@ -1,24 +1,17 @@
 export default function esUnCUIT(campo) {
   const cuit = campo.value.replace(/\-/g, "");
-  console.log(
-    tieneCaracteresRepetidos(cuit),
-
-    validarPrimerosDigitosCUIT(cuit),
-
-    validarDigitoVerificador(cuit)
-  );
-
   if (!tieneCaracteresRepetidos(cuit)) {
     if (validarPrimerosDigitosCUIT(cuit) && validarDigitoVerificador(cuit)) {
-      console.log("el Cuit existe");
+      // console.log("el Cuit existe");
     } else {
-      console.log("el Cuit NO existe");
+      campo.setCustomValidity("No es un código válido");
+      // console.log("el Cuit NO existe");
     }
   } else {
     console.log("Números repetidos");
+    campo.setCustomValidity("Son números repetidos");
   }
 }
-
 
 function tieneCaracteresRepetidos(cuit) {
   const numerosRepetidos = [
@@ -44,13 +37,11 @@ function validarPrimerosDigitosCUIT(cuit) {
   return digitosValidos.includes(primerosDigitos); // Verificar los primeros dos dígitos
 }
 
+//Validar digito verificador
 function validarDigitoVerificador(cuit) {
-  let digitoVerificador = Number(cuit.slice(-1));
+  let digitoVerificador = Number(cuit.slice(-1)); //o substring
 
-  // console.log(digitoVerificador);
   let digitos = cuit.substr(0, 10).split("").map(Number);
-
-  //console.log(digitos);
 
   let acumulado = 0;
   let factores = [5, 4, 3, 2, 7, 6, 5, 4, 3, 2];
