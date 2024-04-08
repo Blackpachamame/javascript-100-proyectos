@@ -1,162 +1,169 @@
 .banner {
-    background-image: url("../../img/banner_formulario.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 25vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+  background-image: url("../../img/banner_formulario.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
-
 .banner__titulo {
-    font-weight: 600;
-    color: var(--white);
-    font-size: 32px;
-    line-height: 39px;
-    width: 40%;
-    margin: 0 auto;
+  font-weight: 600;
+  color: var(--white);
+  font-size: 32px;
+  line-height: 39px;
+  width: 40%;
+  margin: 0 auto;
 }
 
 .container {
-    margin: 2em 5em;
+  margin: 2em 5em;
 }
 
 .formulario {
-    margin: 3em auto;
-    width: 30vw;
+  margin: 3em auto;
+  width: 30vw;
 }
 
 .breadcrumb li {
-    display: inline;
-    font-size: 16px;
-    color: var(--azul-claro);
+  display: inline;
+  font-size: 16px;
+  color: var(--azul-claro);
 }
 
-.breadcrumb li+li:before {
-    padding: 8px;
-    color: var(--azul-claro);
-    content: ">";
+.breadcrumb li + li:before {
+  padding: 8px;
+  color: var(--azul-claro);
+  content: ">";
 }
 
 .breadcrumb__pagina {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .formulario__container {
-    margin: 3em 0;
-    text-align: center;
+  margin: 3em 0;
+  text-align: center;
+}
+
+.formulario__container img.qr {
+  width: 200px;
 }
 
 .formulario__campo {
-    margin-bottom: 2em;
+  margin-bottom: 2em;
 }
 
 .formulario__titulo-texto {
-    margin: 1em 0;
-    font-weight: 600;
-    font-size: 28px;
-    line-height: 34px;
+  margin: 1em 0;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 34px;
 }
 
 .campo__etiqueta {
-    font-weight: 500;
-    line-height: 20px;
+  font-weight: 500;
+  line-height: 20px;
 }
 
 .campo__completo {
-    display: block;
-    border: 2px solid var(--azul-claro);
-    border-radius: 20px;
-    width: 100%;
-    padding: 1em;
-    margin-top: .5em;
-
+  display: block;
+  border: 2px solid var(--azul-claro);
+  border-radius: 20px;
+  width: 100%;
+  padding: 1em;
+  margin-top: 0.5em;
 }
 
 .campo__completo--menor {
-    width: 50%;
+  width: 50%;
 }
 
 .terminos__texto {
-    line-height: 20px;
-    display: inline;
+  line-height: 20px;
+  display: inline;
 }
 
 .formulario__boton,
 .camera__boton {
-    background: var(--azul-claro);
-    margin: 2em auto;
-    display: block;
-    border: none;
-    padding: 1em 4em;
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 22px;
-    color: var(--white);
+  background: var(--azul-claro);
+  margin: 2em auto;
+  display: block;
+  border: none;
+  padding: 1em 4em;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: var(--white);
 }
 
 .formulario__imagen {
-    display: block;
-    margin: 2em auto;
+  display: block;
+  margin: 2em auto;
 }
 
 .formulario__imagen--invisivel {
-    display: none;
+  display: none;
 }
 
 .formulario__boton--enlace {
-    text-decoration: none;
-    width: 50%;
+  text-decoration: none;
+  width: 50%;
 }
 
 .formulario__texto {
-    margin: 1em 8em;
+  margin: 1em 8em;
 }
 
 .formulario__texto--negrito {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .formulario__texto-secundario {
-    margin: 2em 6em;
+  margin: 2em 6em;
 }
 
 .mensaje-error {
-    color: red;
+  display: block;
+  margin-top: 5px;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 0.925rem;
+  color: red;
 }
 
 .campo__completo--error {
-    border: 2px solid red;
+  border: 2px solid red;
 }
 
 .formulario__mensaje,
 .formulario__camera {
-    display: none;
+  display: none;
 }
 
 .formulario__mensaje--exito,
 .formulario__camera--mostrar {
-    display: block;
+  display: block;
 }
 
 @media screen and (max-width: 900px) {
-    .formulario {
-        width: 70%;
-    }
+  .formulario {
+    width: 70%;
+  }
 
-    .formulario__etapas {
-        width: 100%;
-    }
+  .formulario__etapas {
+    width: 100%;
+  }
 
-    .formulario__texto {
-        margin: 0;
-    }
+  .formulario__texto {
+    margin: 0;
+  }
 
-    .container {
-        margin: 2em;
-    }
+  .container {
+    margin: 2em;
+  }
 }
