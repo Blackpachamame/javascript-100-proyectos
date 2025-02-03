@@ -1,162 +1,223 @@
 :root {
-    --color-primary: #4B69FD;
-    --color-secondary: #FFF9EB;
-    --color-tertiary: #C4C4C4;
-    --color-button: #fe652b;
-    --color-button-hover: #e55720;
-    --color-text: #444444;
-    --color-white: #FFFFFF;
+  --color-primary: #e18186; /* Rosa suave */
+  --color-secondary: #e08085; /* Rosa intenso */
+  --color-accent: #7fe1d5; /* Verde azulado */
+  --color-highlight: #ff677f; /* Rosa oscuro */
+  --color-gradient-start: rgba(220, 121, 127, 0.7); /* Degradado rosa */
+  --color-gradient-end: rgba(152, 194, 177, 0.7); /* Degradado verde oscuro */
+  --color-gradient-main-start: #9fc1df;
+  --color-gradient-main-end: #beabc1;
+  --color-white: #f5f5f5;
+  --color-text: #444444;
 }
 
 /* Estilos generales */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 
 body {
-    height: 100vh;
-    background-color: var(--color-primary);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  --s: 31px; /* control the size*/
+  --c1: #dc797f;
+  --c2: #e08085;
+  --l1: #0000 48%, var(--c1) 0 52%, #0000 0;
+  --l2: #0000 1.3%, var(--c2) 0 32%, #0000 0;
+  background: linear-gradient(-45deg, var(--l2)),
+    linear-gradient(45deg, var(--l1)),
+    linear-gradient(45deg, var(--l2)) calc(var(--s) / 2) calc(var(--s) / 2),
+    linear-gradient(-45deg, var(--l1)) var(--c2);
+  background-size: calc(2 * var(--s)) var(--s), var(--s) var(--s);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
+/* Contenedor principal */
 .main-content {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--color-gradient-start),
+    var(--color-gradient-end)
+  );
+  width: 100%;
+  max-width: 400px;
+  border: 3px solid var(--color-white);
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
 }
 
 /* Banner */
 .header-banner {
-    flex: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.main-title {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--color-white);
+  margin-top: 10px;
+}
+
+.header-banner img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid var(--color-white);
 }
 
 /* Sección de entrada */
-.input-section {
-    flex: 60%;
-    background-color: var(--color-secondary);
-    border: 1px solid #000;
-    border-radius: 64px 64px 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    width: 100%;
-}
-
-/* Títulos */
-.main-title {
-    font-size: 48px;
-    font-family: "Merriweather", serif;
-    font-weight: 900;
-    font-style: italic;
-    color: var(--color-white);
-}
-
 .section-title {
-    font-family: "Inter", serif;
-    font-size: 36px;
-    font-weight: 700;
-    color: var(--color-primary);
-    margin: 10px 0;
-    text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 10px;
 }
 
-/* Contenedores de entrada y botón */
+/* Input y botón */
 .input-wrapper {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 600px;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
 }
 
 .input-name {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #000;
-    border-radius: 25px 0 0 25px;
-    font-size: 16px;
-}
-
-.button-container {
-    width: 300px;
-    justify-content: center;
-}
-
-/* Estilos de entrada de texto */
-.input-title {
-    flex: 1;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: 2px solid #333;
-    border-right: none;
-    border-radius: 25px 0 0 25px;
-    font-family: "Merriweather", serif;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Estilos de botón */
-button {
-    padding: 15px 30px;
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
-    border: 2px solid #000;
-    border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px 0 0 10px;
+  font-size: 16px;
 }
 
 .button-add {
-    background-color: var(--color-tertiary);
-    color: var(--color-text);
-    border-radius: 0 25px 25px 0;
+  background: var(--color-secondary);
+  color: var(--color-white);
+  border: 2px solid var(--color-secondary);
+  padding: 10px 15px;
+  border-radius: 0 10px 10px 0;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
 }
 
 .button-add:hover {
-    background-color: #a1a1a1;
+  background: var(--color-highlight);
+  border: 2px solid var(--color-highlight);
 }
 
-/* Listas */
-ul {
-    list-style-type: none;
-    color: var(--color-text);
-    font-family: "Inter", sans-serif;
-    font-size: 18px;
-    margin: 20px 0;
+/* Lista de amigos */
+.list-section {
+  background-color: var(--color-white);
+  padding: 15px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
+.name-list {
+  list-style: none;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0s 0.5s;
+  height: 0;
+  overflow: hidden;
+}
+
+.name-list.mostrar {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+  transition: opacity 0.5s, visibility 0s 0s, height 0.5s;
+  margin-bottom: 15px;
+}
+
+.friend-item {
+  display: flex;
+  align-items: center;
+  background: var(--color-accent);
+  color: var(--color-white);
+  padding: 8px 12px;
+  margin: 5px 0;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.friend-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Botones de sorteo y reset */
+.button-container {
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  color: var(--color-white);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.button img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.button-play {
+  background: var(--color-accent);
+  background: linear-gradient(
+    45deg,
+    var(--color-accent),
+    var(--color-gradient-end)
+  );
+}
+
+.button-play:hover {
+  box-shadow: 0px 0px 2px 1px var(--color-accent);
+}
+
+.button-reset {
+  background: var(--color-highlight);
+  background: linear-gradient(
+    45deg,
+    var(--color-gradient-start),
+    var(--color-highlight)
+  );
+}
+
+.button-reset:hover {
+  box-shadow: 0px 0px 2px 1px var(--color-highlight);
+}
+
+/* Resultado del sorteo */
 .result-list {
-    margin-top: 15px;
-    color: #05DF05;
-    font-size: 22px;
-    font-weight: bold;
-    text-align: center;
-}
-
-/* Botón de sortear título */
-.button-draw {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 10px 40px;
-    color: var(--color-white);
-    background-color: var(--color-button);
-    font-size: 16px;
-}
-
-.button-draw img {
-    margin-right: 40px;
-}
-
-.button-draw:hover {
-    background-color: var(--color-button-hover);
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--color-primary);
 }
