@@ -1,14 +1,16 @@
 :root {
-  --color-primary: #e18186; /* Rosa suave */
-  --color-secondary: #e08085; /* Rosa intenso */
-  --color-accent: #7fe1d5; /* Verde azulado */
-  --color-highlight: #ff677f; /* Rosa oscuro */
-  --color-gradient-start: rgba(220, 121, 127, 0.7); /* Degradado rosa */
-  --color-gradient-end: rgba(152, 194, 177, 0.7); /* Degradado verde oscuro */
-  --color-gradient-main-start: #9fc1df;
-  --color-gradient-main-end: #beabc1;
+  --color-primary: #e18186;
+  --color-secondary: #f0acaf;
+  --color-accent: #7fe1d5;
+  --color-highlight: #ff677f;
   --color-white: #f5f5f5;
-  --color-text: #444444;
+  --color-white-transparent: rgba(255, 255, 255, 0.5);
+  --color-text: #292929;
+  --bg-2: linear-gradient(
+    135deg,
+    var(--color-secondary) 0%,
+    var(--color-highlight) 100%
+  );
 }
 
 /* Estilos generales */
@@ -41,8 +43,8 @@ body {
 .main-content {
   background: linear-gradient(
     90deg,
-    var(--color-gradient-start),
-    var(--color-gradient-end)
+    var(--color-highlight),
+    var(--color-accent)
   );
   width: 100%;
   max-width: 400px;
@@ -51,6 +53,9 @@ body {
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
   padding: 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 /* Banner */
@@ -58,14 +63,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
 }
 
 .main-title {
   font-size: 28px;
   font-weight: 900;
   color: var(--color-white);
-  margin-top: 10px;
+  margin-block: 10px;
 }
 
 .header-banner img {
@@ -114,13 +118,75 @@ body {
   border: 2px solid var(--color-highlight);
 }
 
-/* Lista de amigos */
+.form__container-input {
+  position: relative;
+  width: 100%;
+}
+
+.form__input {
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  padding-left: 15px;
+  padding-right: 75px;
+  border-color: hsl(0, 36%, 70%, 0.7);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5rem;
+  position: relative;
+  background: rgba(255, 255, 255, 1);
+}
+
+.form__input::placeholder {
+  color: var(--color-primary);
+  font-size: 16px;
+}
+
+.form__submit {
+  width: 70px;
+  height: 50px;
+  border-radius: 5rem;
+  border-width: 0;
+  background: var(--bg-2);
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-shadow: 0px 0px 20px 0px rgba(206, 151, 151, 0.6);
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(206, 151, 151, 0.6);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(206, 151, 151, 0.6);
+  cursor: pointer;
+}
+
+.form__arrow {
+  position: absolute;
+  top: 15px;
+  left: 32px;
+}
+
+.form__submit:hover {
+  background: var(--color-highlight);
+  box-shadow: 0px 0px 20px 0px rgba(206, 151, 151, 0.8);
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(206, 151, 151, 0.8);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(206, 151, 151, 0.8);
+  cursor: pointer;
+}
+
+/* LISTA DE AMIGOS */
 .list-section {
-  background-color: var(--color-white);
-  padding: 15px;
-  border-radius: 15px;
+  background-color: var(--color-white-transparent);
+  padding: 14px;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
+  gap: 5px;
+}
+
+.list-title {
+  color: var(--color-highlight);
+}
+
+.list-empty {
+  text-wrap: balance;
 }
 
 .name-list {
@@ -138,17 +204,14 @@ body {
   visibility: visible;
   height: auto;
   transition: opacity 0.5s, visibility 0s 0s, height 0.5s;
-  margin-bottom: 15px;
 }
 
 .friend-item {
   display: flex;
   align-items: center;
-  background: var(--color-accent);
-  color: var(--color-white);
+  background: rgba(0, 0, 0, 0.2);
   padding: 8px 12px;
-  margin: 5px 0;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 16px;
 }
 
@@ -164,55 +227,50 @@ body {
   font-weight: bold;
 }
 
-/* Botones de sorteo y reset */
+/* BOTONES */
 .button-container {
   display: flex;
   gap: 10px;
+  background-color: var(--color-white-transparent);
+  padding: 15px;
+  border-radius: 12px;
 }
 
 .button {
-  color: var(--color-white);
-  padding: 12px 20px;
+  color: var(--color-text);
+  background-color: var(--color-white);
+  padding: 5px;
   border: none;
-  border-radius: 20px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 18px;
   transition: all 0.3s ease-in-out;
   display: flex;
   align-items: center;
-  justify-content: center;
   width: 100%;
 }
 
 .button img {
-  width: 20px;
-  margin-right: 10px;
+  width: 40px;
+  border-radius: 8px;
+  padding: 8px;
+  margin-right: 6px;
 }
 
-.button-play {
-  background: var(--color-accent);
-  background: linear-gradient(
-    45deg,
-    var(--color-accent),
-    var(--color-gradient-end)
-  );
+.button.button-play img {
+  background-color: var(--color-accent);
+}
+
+.button.button-reset img {
+  background-color: var(--color-highlight);
 }
 
 .button-play:hover {
-  box-shadow: 0px 0px 2px 1px var(--color-accent);
-}
-
-.button-reset {
-  background: var(--color-highlight);
-  background: linear-gradient(
-    45deg,
-    var(--color-gradient-start),
-    var(--color-highlight)
-  );
+  box-shadow: 0px 0px 2px 2px var(--color-accent);
 }
 
 .button-reset:hover {
-  box-shadow: 0px 0px 2px 1px var(--color-highlight);
+  box-shadow: 0px 0px 2px 2px var(--color-highlight);
 }
 
 /* Resultado del sorteo */
@@ -220,4 +278,34 @@ body {
   font-size: 20px;
   font-weight: bold;
   color: var(--color-primary);
+}
+
+@media screen and (max-width: 600px) {
+  .button {
+    padding: 3px;
+    font-size: 14px;
+  }
+
+  .button img {
+    padding: 6px;
+  }
+}
+@media screen and (max-width: 350px) {
+  body {
+    padding: 0;
+  }
+
+  .main-content {
+    min-height: 100vh;
+    border: none;
+    border-radius: 0;
+  }
+
+  .list-empty {
+    font-size: 14px;
+  }
+
+  .button {
+    padding: 0px;
+  }
 }
