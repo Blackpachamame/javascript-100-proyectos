@@ -6,6 +6,7 @@
   --color-white: #f5f5f5;
   --color-white-transparent: rgba(255, 255, 255, 0.5);
   --color-text: #292929;
+  --bg-1: linear-gradient(90deg, var(--color-highlight), var(--color-accent));
   --bg-2: linear-gradient(
     135deg,
     var(--color-secondary) 0%,
@@ -22,7 +23,7 @@
 }
 
 body {
-  --s: 31px; /* control the size*/
+  --s: 31px;
   --c1: #dc797f;
   --c2: #e08085;
   --l1: #0000 48%, var(--c1) 0 52%, #0000 0;
@@ -41,11 +42,7 @@ body {
 
 /* Contenedor principal */
 .main-content {
-  background: linear-gradient(
-    90deg,
-    var(--color-highlight),
-    var(--color-accent)
-  );
+  background: var(--bg-1);
   width: 100%;
   max-width: 400px;
   border: 3px solid var(--color-white);
@@ -171,6 +168,15 @@ body {
   cursor: pointer;
 }
 
+.form__error {
+  color: #000;
+  font-size: 12px;
+  margin-top: 4px;
+  font-style: italic;
+  text-align: start;
+  padding-left: 15px;
+}
+
 /* LISTA DE AMIGOS */
 .list-section {
   background-color: var(--color-white-transparent);
@@ -178,11 +184,11 @@ body {
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
 }
 
 .list-title {
   color: var(--color-highlight);
+  margin-bottom: 10px;
 }
 
 .list-empty {
@@ -204,12 +210,15 @@ body {
   visibility: visible;
   height: auto;
   transition: opacity 0.5s, visibility 0s 0s, height 0.5s;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .friend-item {
   display: flex;
   align-items: center;
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--color-white);
   padding: 8px 12px;
   border-radius: 10px;
   font-size: 16px;
@@ -248,6 +257,15 @@ body {
   display: flex;
   align-items: center;
   width: 100%;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button:hover:disabled {
+  box-shadow: none;
 }
 
 .button img {

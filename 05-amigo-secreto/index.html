@@ -19,23 +19,16 @@
 <body>
     <main class="main-content">
         <header class="header-banner">
-            <img src="assets/amigoIncognito.png" alt="Imagen representativa de amigo secreto">
-            <p id="resultado" class="result-list" aria-live="polite"></p>
-            <h1 class="main-title">Amigo Secreto</h1>
+            <img id="imagenAmigoSecreto" src="assets/amigoIncognito.png" alt="Imagen representativa de amigo secreto">
+            <!-- <p id="resultado" class="result-list" aria-live="polite"></p> -->
+            <h1 id="resultado" class="main-title" aria-live="polite">Amigo Secreto</h1>
         </header>
 
-        <!-- <section class="input-section">
-            <h2 class="section-title">Digite el nombre de sus amigos</h2>
-            <div class="input-wrapper">
-                <input type="text" id="amigo" class="input-name" placeholder="Escribe un nombre">
-                <button class="button-add" onclick="agregarAmigo()">Añadir</button>
-            </div>
-        </section> -->
         <section class="form__container-input">
             <input id="amigo" class="form__input" type="amigo" placeholder="Añadir amigo">
             <button class="form__submit" onclick="agregarAmigo()"><img class="form__arrow" src="assets/icon-arrow.svg"
                     alt="icon-arrow"></button>
-            <!-- <p id="error" class="form__error">Please provide a valid amigo</p> -->
+            <p id="error" class="form__error"></p>
         </section>
 
         <section class="list-section">
@@ -45,11 +38,13 @@
         </section>
 
         <section class="button-container">
-            <button class="button button-play" onclick="sortearAmigo()" aria-label="Sortear amigo secreto">
+            <button class="button button-play" id="button-play" onclick="sortearAmigo()"
+                aria-label="Sortear amigo secreto" disabled>
                 <img src="assets/icon-gift.svg" alt="Ícono para sortear">
                 Sortear
             </button>
-            <button class="button button-reset" onclick="sortearAmigo()" aria-label="Resetear lista">
+            <button class="button button-reset" id="button-reset" onclick="resetearLista()" aria-label="Resetear lista"
+                disabled>
                 <img src="assets/icon-restart.svg" alt="Ícono para resetear">
                 Reiniciar
             </button>
