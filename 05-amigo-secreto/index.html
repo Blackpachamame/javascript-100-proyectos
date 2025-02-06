@@ -4,46 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎁</text></svg>"
-        type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Amigo Secreto</title>
 </head>
 
 <body>
-    <main class="main-content">
-        <header class="header-banner">
-            <img id="imagenAmigoSecreto" src="assets/amigoIncognito.png" alt="Imagen representativa de amigo secreto">
-            <!-- <p id="resultado" class="result-list" aria-live="polite"></p> -->
-            <h1 id="resultado" class="main-title" aria-live="polite">Amigo Secreto</h1>
+    <main class="container">
+        <header class="header">
+            <img id="imagenAmigoSecreto" class="header__image" src="assets/amigo-secreto.jpg" alt="Amigo Secreto">
+            <h1 id="resultado" class="header__title" aria-live="polite">Amigo Secreto</h1>
         </header>
 
-        <section class="form__container-input">
-            <input id="amigo" class="form__input" type="amigo" placeholder="Añadir amigo">
-            <button class="form__submit" onclick="agregarAmigo()"><img class="form__arrow" src="assets/icon-arrow.svg"
-                    alt="icon-arrow"></button>
+        <section class="form">
+            <div class="form__group">
+                <input id="amigo" class="form__input" type="text" placeholder="Añadir amigo">
+                <button class="form__button" onclick="agregarAmigo()">
+                    <img class="form__button-icon" src="assets/icon-arrow.svg" alt="Añadir amigo">
+                </button>
+            </div>
             <p id="error" class="form__error"></p>
         </section>
 
-        <section class="list-section">
-            <h2 class="list-title">Lista de Amigos</h2>
-            <p class="list-empty">Aún no has agregado amigos a la lista.</p>
-            <ul id="listaAmigos" class="name-list" aria-labelledby="listaAmigos" role="list"></ul>
+        <section class="list">
+            <h2 class="list__title">Lista de Amigos</h2>
+            <p class="list__empty">Aún no has agregado amigos a la lista.</p>
+            <ul id="listaAmigos" class="list__items" aria-labelledby="listaAmigos" role="list"></ul>
         </section>
 
-        <section class="button-container">
-            <button class="button button-play" id="button-play" onclick="sortearAmigo()"
+        <section class="controls">
+            <button class="button button--play" id="button-play" onclick="sortearAmigo()"
                 aria-label="Sortear amigo secreto" disabled>
                 <img src="assets/icon-gift.svg" alt="Ícono para sortear">
                 Sortear
             </button>
-            <button class="button button-reset" id="button-reset" onclick="resetearLista()" aria-label="Resetear lista"
+            <button class="button button--reset" id="button-reset" onclick="resetearLista()" aria-label="Resetear lista"
                 disabled>
                 <img src="assets/icon-restart.svg" alt="Ícono para resetear">
                 Reiniciar

@@ -14,7 +14,7 @@
   );
 }
 
-/* Estilos generales */
+/* 🎨 Reset general */
 * {
   margin: 0;
   padding: 0;
@@ -22,6 +22,7 @@
   font-family: "Inter", sans-serif;
 }
 
+/* 🎨 Fondo del body */
 body {
   --s: 31px;
   --c1: #dc797f;
@@ -40,8 +41,8 @@ body {
   padding: 20px;
 }
 
-/* Contenedor principal */
-.main-content {
+/* 📌 Contenedor principal */
+.container {
   background: var(--bg-1);
   width: 100%;
   max-width: 400px;
@@ -55,83 +56,48 @@ body {
   gap: 15px;
 }
 
-/* Banner */
-.header-banner {
+/* 🎭 Header */
+.header {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.main-title {
-  font-size: 28px;
-  font-weight: 900;
-  color: var(--color-white);
-  margin-block: 10px;
-}
-
-.header-banner img {
+.header__image {
   width: 120px;
   height: 120px;
   border-radius: 50%;
   border: 4px solid var(--color-white);
 }
 
-/* Sección de entrada */
-.section-title {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: 10px;
-}
-
-/* Input y botón */
-.input-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 15px;
-}
-
-.input-name {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 10px 0 0 10px;
-  font-size: 16px;
-}
-
-.button-add {
-  background: var(--color-secondary);
+.header__title {
+  font-size: 28px;
+  font-weight: 900;
   color: var(--color-white);
-  border: 2px solid var(--color-secondary);
-  padding: 10px 15px;
-  border-radius: 0 10px 10px 0;
-  cursor: pointer;
-  font-size: 16px;
-  transition: all 0.3s ease-in-out;
+  margin-block: 10px;
 }
 
-.button-add:hover {
-  background: var(--color-highlight);
-  border: 2px solid var(--color-highlight);
+/* ✏️ Formulario */
+.form {
+  display: flex;
+  flex-direction: column;
 }
 
-.form__container-input {
+.form__group {
+  display: flex;
+  align-items: center;
   position: relative;
-  width: 100%;
 }
 
 .form__input {
-  width: 100%;
+  flex: 1;
   height: 50px;
   font-size: 16px;
   padding-left: 15px;
   padding-right: 75px;
-  border-color: hsl(0, 36%, 70%, 0.7);
-  border-style: solid;
-  border-width: 1px;
+  border: 1px solid hsl(0, 36%, 70%, 0.7);
   border-radius: 5rem;
-  position: relative;
-  background: rgba(255, 255, 255, 1);
+  background: var(--color-white);
 }
 
 .form__input::placeholder {
@@ -139,7 +105,7 @@ body {
   font-size: 16px;
 }
 
-.form__submit {
+.form__button {
   width: 70px;
   height: 50px;
   border-radius: 5rem;
@@ -154,20 +120,17 @@ body {
   cursor: pointer;
 }
 
-.form__arrow {
+.form__button:hover {
+  background: var(--color-highlight);
+}
+
+.form__button-icon {
   position: absolute;
   top: 15px;
   left: 32px;
 }
 
-.form__submit:hover {
-  background: var(--color-highlight);
-  box-shadow: 0px 0px 20px 0px rgba(206, 151, 151, 0.8);
-  -webkit-box-shadow: 0px 0px 20px 0px rgba(206, 151, 151, 0.8);
-  -moz-box-shadow: 0px 0px 20px 0px rgba(206, 151, 151, 0.8);
-  cursor: pointer;
-}
-
+/* 🎯 Mensaje de error */
 .form__error {
   color: #000;
   font-size: 12px;
@@ -177,8 +140,8 @@ body {
   padding-left: 15px;
 }
 
-/* LISTA DE AMIGOS */
-.list-section {
+/* 📜 Lista de Amigos */
+.list {
   background-color: var(--color-white-transparent);
   padding: 14px;
   border-radius: 12px;
@@ -186,16 +149,17 @@ body {
   flex-direction: column;
 }
 
-.list-title {
+.list__title {
   color: var(--color-highlight);
   margin-bottom: 10px;
 }
 
-.list-empty {
+.list__empty {
+  text-align: center;
   text-wrap: balance;
 }
 
-.name-list {
+.list__items {
   list-style: none;
   padding: 0;
   opacity: 0;
@@ -205,7 +169,7 @@ body {
   overflow: hidden;
 }
 
-.name-list.mostrar {
+.list__items.list__items--visible {
   opacity: 1;
   visibility: visible;
   height: auto;
@@ -215,7 +179,8 @@ body {
   gap: 6px;
 }
 
-.friend-item {
+/* 👤 Ítem de la lista */
+.list__item {
   display: flex;
   align-items: center;
   background: var(--color-white);
@@ -224,20 +189,20 @@ body {
   font-size: 16px;
 }
 
-.avatar {
+.list__avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   margin-right: 10px;
 }
 
-.friend-name {
+.list__name {
   font-size: 18px;
   font-weight: bold;
 }
 
-/* BOTONES */
-.button-container {
+/* 🎛️ Controles */
+.controls {
   display: flex;
   gap: 10px;
   background-color: var(--color-white-transparent);
@@ -245,27 +210,19 @@ body {
   border-radius: 12px;
 }
 
+/* 🎮 Botones */
 .button {
   color: var(--color-text);
   background-color: var(--color-white);
+  flex: 1;
+  display: flex;
+  align-items: center;
   padding: 5px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
   font-size: 18px;
-  transition: all 0.3s ease-in-out;
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.button:hover:disabled {
-  box-shadow: none;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .button img {
@@ -275,29 +232,37 @@ body {
   margin-right: 6px;
 }
 
-.button.button-play img {
+.button--play img {
   background-color: var(--color-accent);
 }
 
-.button.button-reset img {
+.button--reset img {
   background-color: var(--color-highlight);
 }
 
-.button-play:hover {
+.button--play:hover {
   box-shadow: 0px 0px 2px 2px var(--color-accent);
 }
 
-.button-reset:hover {
+.button--reset:hover {
   box-shadow: 0px 0px 2px 2px var(--color-highlight);
 }
 
-/* Resultado del sorteo */
+/* 🎭 Botones deshabilitados */
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* 🎁 Resultado */
 .result-list {
   font-size: 20px;
   font-weight: bold;
   color: var(--color-primary);
 }
 
+/* 📱 Responsividad */
 @media screen and (max-width: 600px) {
   .button {
     padding: 3px;
@@ -308,18 +273,19 @@ body {
     padding: 6px;
   }
 }
+
 @media screen and (max-width: 350px) {
   body {
     padding: 0;
   }
 
-  .main-content {
+  .container {
     min-height: 100vh;
     border: none;
     border-radius: 0;
   }
 
-  .list-empty {
+  .list__empty {
     font-size: 14px;
   }
 
