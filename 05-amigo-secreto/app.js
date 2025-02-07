@@ -214,7 +214,7 @@ function sortearAmigo() {
         ],
       },
     });
-  } else if (nombreSorteado.toLowerCase() === "david") {
+  } else if (nombreSorteado.toLowerCase() === "kike") {
     confetti({
       spread: 360,
       ticks: 200,
@@ -234,10 +234,7 @@ function sortearAmigo() {
         ],
       },
     });
-  } else if (
-    nombreSorteado.toLowerCase() === "monzon" ||
-    nombreSorteado.toLowerCase() === "monzón"
-  ) {
+  } else if (nombreSorteado.toLowerCase() === "david") {
     confetti({
       spread: 360,
       ticks: 200,

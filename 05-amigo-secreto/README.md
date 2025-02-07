@@ -40,5 +40,5 @@ Este es un proyecto interactivo que permite a los usuarios agregar amigos a una 
 
 Este proyecto está bajo la **Licencia MIT**, lo que significa que puedes usarlo, modificarlo y distribuirlo libremente.
   
-📌 **Desarrollado con ❤️ por [Tu Nombre o Usuario](https://github.com/tu-usuario).**  
+📌 **Desarrollado con ❤️ por [El protagonista de tus sueños](https://github.com/Blackpachamame).**  
 🎉 ¡Diviértete con tu **Amigo Secreto**! 🎁
