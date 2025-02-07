@@ -4,7 +4,7 @@ Este es un proyecto interactivo que permite a los usuarios agregar amigos a una 
 
 <img src="assets/preview.jpg"></img>
 
-## 💻 [Ver en Vivo](https://blackpachamame.github.io/javascript-100-proyectos/05-amigo-secreto/)
+### 💻 [Ver en Vivo](https://blackpachamame.github.io/javascript-100-proyectos/05-amigo-secreto/)
 
 ## 🎨 Tecnologías utilizadas
 
@@ -40,5 +40,4 @@ Este es un proyecto interactivo que permite a los usuarios agregar amigos a una 
 
 Este proyecto está bajo la **Licencia MIT**, lo que significa que puedes usarlo, modificarlo y distribuirlo libremente.
   
-📌 **Desarrollado con ❤️ por [El protagonista de tus sueños](https://github.com/Blackpachamame).**  
-🎉 ¡Diviértete con tu **Amigo Secreto**! 🎁
+<div align="center">**Desarrollado con ❤️ por [el amor de tu vida](https://github.com/Blackpachamame).**</div>
