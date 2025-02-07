@@ -4,7 +4,7 @@ Este es un proyecto interactivo que permite a los usuarios agregar amigos a una 
 
 <img src="assets/preview.jpg"></img>
 
-- [Ver en Vivo](https://blackpachamame.github.io/javascript-100-proyectos/05-amigo-secreto/)
+## 💻 [Ver en Vivo](https://blackpachamame.github.io/javascript-100-proyectos/05-amigo-secreto/)
 
 ## 🎨 Tecnologías utilizadas
 
