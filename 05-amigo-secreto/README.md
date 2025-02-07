@@ -40,4 +40,4 @@ Este es un proyecto interactivo que permite a los usuarios agregar amigos a una 
 
 Este proyecto está bajo la **Licencia MIT**, lo que significa que puedes usarlo, modificarlo y distribuirlo libremente.
   
-<div align="center">**Desarrollado con ❤️ por [el amor de tu vida](https://github.com/Blackpachamame).**</div>
+**Desarrollado con ❤️ por [el amor de tu vida](https://github.com/Blackpachamame).**
