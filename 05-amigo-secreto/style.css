@@ -38,6 +38,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 20px;
   padding: 20px;
 }
 
@@ -260,6 +262,20 @@ body {
   font-size: 20px;
   font-weight: bold;
   color: var(--color-primary);
+}
+
+/* 🔰 Footer */
+.footer__text {
+  color: var(--color-text);
+  font-size: 14px;
+}
+
+.footer__text a {
+  color: var(--color-text);
+}
+
+.footer__text a:hover {
+  color: var(--color-white);
 }
 
 /* 📱 Responsividad */
