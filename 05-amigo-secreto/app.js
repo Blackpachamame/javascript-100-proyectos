@@ -69,7 +69,7 @@ function resetearLista() {
   listaAmigos.classList.remove("list__items--visible");
   mensajeListaVacia.style.display = "block";
   resultadoTexto.textContent = "Amigo Secreto";
-  imagenSorteo.src = "assets/amigoIncognito.png";
+  imagenSorteo.src = "assets/amigo-secreto.jpg";
   actualizarBotones();
 }
 
@@ -84,6 +84,200 @@ function sortearAmigo() {
 
   resultadoTexto.textContent = `🎉 ${nombreSorteado} 🎁`;
   imagenSorteo.src = generarAvatar(nombreSorteado);
+  if (
+    nombreSorteado.toLowerCase() === "sebastian" ||
+    nombreSorteado.toLowerCase() === "seba"
+  ) {
+    confetti({
+      spread: 360,
+      ticks: 200,
+      gravity: 1,
+      decay: 0.94,
+      startVelocity: 30,
+      particleCount: 100,
+      scalar: 4,
+      shapes: ["image"],
+      shapeOptions: {
+        image: [
+          {
+            src: "./assets/calamardo.png",
+            width: 32,
+            height: 32,
+          },
+        ],
+      },
+    });
+  } else if (
+    nombreSorteado.toLowerCase() === "vanesa" ||
+    nombreSorteado.toLowerCase() === "vane"
+  ) {
+    confetti({
+      spread: 360,
+      ticks: 200,
+      gravity: 1,
+      decay: 0.94,
+      startVelocity: 30,
+      particleCount: 100,
+      scalar: 4,
+      shapes: ["image"],
+      shapeOptions: {
+        image: [
+          {
+            src: "./assets/otaku2.png",
+            width: 32,
+            height: 32,
+          },
+        ],
+      },
+    });
+  } else if (nombreSorteado.toLowerCase() === "luneska") {
+    confetti({
+      spread: 360,
+      ticks: 200,
+      gravity: 1,
+      decay: 0.94,
+      startVelocity: 30,
+      particleCount: 100,
+      scalar: 4,
+      shapes: ["image"],
+      shapeOptions: {
+        image: [
+          {
+            src: "./assets/otaku.png",
+            width: 32,
+            height: 32,
+          },
+        ],
+      },
+    });
+  } else if (nombreSorteado.toLowerCase() === "diego") {
+    confetti({
+      spread: 360,
+      ticks: 200,
+      gravity: 1,
+      decay: 0.94,
+      startVelocity: 30,
+      particleCount: 100,
+      scalar: 4,
+      shapes: ["image"],
+      shapeOptions: {
+        image: [
+          {
+            src: "./assets/krilin.png",
+            width: 32,
+            height: 32,
+          },
+        ],
+      },
+    });
+  } else if (nombreSorteado.toLowerCase() === "samito") {
+    confetti({
+      spread: 360,
+      ticks: 200,
+      gravity: 1,
+      decay: 0.94,
+      startVelocity: 30,
+      particleCount: 100,
+      scalar: 4,
+      shapes: ["image"],
+      shapeOptions: {
+        image: [
+          {
+            src: "./assets/saitama.png",
+            width: 32,
+            height: 32,
+          },
+        ],
+      },
+    });
+  } else if (
+    nombreSorteado.toLowerCase() === "nicolas" ||
+    nombreSorteado.toLowerCase() === "nico" ||
+    nombreSorteado.toLowerCase() === "nicolás"
+  ) {
+    confetti({
+      spread: 360,
+      ticks: 200,
+      gravity: 1,
+      decay: 0.94,
+      startVelocity: 30,
+      particleCount: 100,
+      scalar: 4,
+      shapes: ["image"],
+      shapeOptions: {
+        image: [
+          {
+            src: "./assets/fry.png",
+            width: 32,
+            height: 32,
+          },
+        ],
+      },
+    });
+  } else if (nombreSorteado.toLowerCase() === "david") {
+    confetti({
+      spread: 360,
+      ticks: 200,
+      gravity: 1,
+      decay: 0.94,
+      startVelocity: 30,
+      particleCount: 100,
+      scalar: 4,
+      shapes: ["image"],
+      shapeOptions: {
+        image: [
+          {
+            src: "./assets/rick.png",
+            width: 32,
+            height: 32,
+          },
+        ],
+      },
+    });
+  } else if (
+    nombreSorteado.toLowerCase() === "monzon" ||
+    nombreSorteado.toLowerCase() === "monzón"
+  ) {
+    confetti({
+      spread: 360,
+      ticks: 200,
+      gravity: 1,
+      decay: 0.94,
+      startVelocity: 30,
+      particleCount: 100,
+      scalar: 4,
+      shapes: ["image"],
+      shapeOptions: {
+        image: [
+          {
+            src: "./assets/troll.png",
+            width: 32,
+            height: 32,
+          },
+        ],
+      },
+    });
+  } else {
+    confetti({
+      spread: 360,
+      ticks: 200,
+      gravity: 1,
+      decay: 0.94,
+      startVelocity: 30,
+      particleCount: 100,
+      scalar: 4,
+      shapes: ["image"],
+      shapeOptions: {
+        image: [
+          {
+            src: `https://api.dicebear.com/7.x/bottts-neutral/svg?seed=${nombreSorteado}`,
+            width: 32,
+            height: 32,
+          },
+        ],
+      },
+    });
+  }
 }
 
 function actualizarBotones() {
