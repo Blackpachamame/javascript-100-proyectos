@@ -7,6 +7,20 @@ const imagenSorteo = document.getElementById("imagenAmigoSecreto");
 const listaAmigos = document.getElementById("listaAmigos");
 const resultadoTexto = document.getElementById("resultado");
 const mensajeListaVacia = document.querySelector(".list__empty");
+const confetiMap = {
+  sebastian: "./assets/calamardo.png",
+  seba: "./assets/calamardo.png",
+  vanesa: "./assets/otaku2.png",
+  vane: "./assets/otaku2.png",
+  luneska: "./assets/otaku.png",
+  diego: "./assets/krilin.png",
+  samito: "./assets/saitama.png",
+  nicolas: "./assets/fry.png",
+  nico: "./assets/fry.png",
+  nicolás: "./assets/fry.png",
+  kike: "./assets/rick.png",
+  david: "./assets/troll.png",
+};
 
 function generarAvatar(nombre) {
   return `https://api.dicebear.com/7.x/bottts-neutral/svg?seed=${encodeURIComponent(
@@ -84,197 +98,32 @@ function sortearAmigo() {
 
   resultadoTexto.textContent = `🎉 ${nombreSorteado} 🎁`;
   imagenSorteo.src = generarAvatar(nombreSorteado);
-  if (
-    nombreSorteado.toLowerCase() === "sebastian" ||
-    nombreSorteado.toLowerCase() === "seba"
-  ) {
-    confetti({
-      spread: 360,
-      ticks: 200,
-      gravity: 1,
-      decay: 0.94,
-      startVelocity: 30,
-      particleCount: 100,
-      scalar: 4,
-      shapes: ["image"],
-      shapeOptions: {
-        image: [
-          {
-            src: "./assets/calamardo.png",
-            width: 32,
-            height: 32,
-          },
-        ],
-      },
-    });
-  } else if (
-    nombreSorteado.toLowerCase() === "vanesa" ||
-    nombreSorteado.toLowerCase() === "vane"
-  ) {
-    confetti({
-      spread: 360,
-      ticks: 200,
-      gravity: 1,
-      decay: 0.94,
-      startVelocity: 30,
-      particleCount: 100,
-      scalar: 4,
-      shapes: ["image"],
-      shapeOptions: {
-        image: [
-          {
-            src: "./assets/otaku2.png",
-            width: 32,
-            height: 32,
-          },
-        ],
-      },
-    });
-  } else if (nombreSorteado.toLowerCase() === "luneska") {
-    confetti({
-      spread: 360,
-      ticks: 200,
-      gravity: 1,
-      decay: 0.94,
-      startVelocity: 30,
-      particleCount: 100,
-      scalar: 4,
-      shapes: ["image"],
-      shapeOptions: {
-        image: [
-          {
-            src: "./assets/otaku.png",
-            width: 32,
-            height: 32,
-          },
-        ],
-      },
-    });
-  } else if (nombreSorteado.toLowerCase() === "diego") {
-    confetti({
-      spread: 360,
-      ticks: 200,
-      gravity: 1,
-      decay: 0.94,
-      startVelocity: 30,
-      particleCount: 100,
-      scalar: 4,
-      shapes: ["image"],
-      shapeOptions: {
-        image: [
-          {
-            src: "./assets/krilin.png",
-            width: 32,
-            height: 32,
-          },
-        ],
-      },
-    });
-  } else if (nombreSorteado.toLowerCase() === "samito") {
-    confetti({
-      spread: 360,
-      ticks: 200,
-      gravity: 1,
-      decay: 0.94,
-      startVelocity: 30,
-      particleCount: 100,
-      scalar: 4,
-      shapes: ["image"],
-      shapeOptions: {
-        image: [
-          {
-            src: "./assets/saitama.png",
-            width: 32,
-            height: 32,
-          },
-        ],
-      },
-    });
-  } else if (
-    nombreSorteado.toLowerCase() === "nicolas" ||
-    nombreSorteado.toLowerCase() === "nico" ||
-    nombreSorteado.toLowerCase() === "nicolás"
-  ) {
-    confetti({
-      spread: 360,
-      ticks: 200,
-      gravity: 1,
-      decay: 0.94,
-      startVelocity: 30,
-      particleCount: 100,
-      scalar: 4,
-      shapes: ["image"],
-      shapeOptions: {
-        image: [
-          {
-            src: "./assets/fry.png",
-            width: 32,
-            height: 32,
-          },
-        ],
-      },
-    });
-  } else if (nombreSorteado.toLowerCase() === "kike") {
-    confetti({
-      spread: 360,
-      ticks: 200,
-      gravity: 1,
-      decay: 0.94,
-      startVelocity: 30,
-      particleCount: 100,
-      scalar: 4,
-      shapes: ["image"],
-      shapeOptions: {
-        image: [
-          {
-            src: "./assets/rick.png",
-            width: 32,
-            height: 32,
-          },
-        ],
-      },
-    });
-  } else if (nombreSorteado.toLowerCase() === "david") {
-    confetti({
-      spread: 360,
-      ticks: 200,
-      gravity: 1,
-      decay: 0.94,
-      startVelocity: 30,
-      particleCount: 100,
-      scalar: 4,
-      shapes: ["image"],
-      shapeOptions: {
-        image: [
-          {
-            src: "./assets/troll.png",
-            width: 32,
-            height: 32,
-          },
-        ],
-      },
-    });
-  } else {
-    confetti({
-      spread: 360,
-      ticks: 200,
-      gravity: 1,
-      decay: 0.94,
-      startVelocity: 30,
-      particleCount: 100,
-      scalar: 4,
-      shapes: ["image"],
-      shapeOptions: {
-        image: [
-          {
-            src: `https://api.dicebear.com/7.x/bottts-neutral/svg?seed=${nombreSorteado}`,
-            width: 32,
-            height: 32,
-          },
-        ],
-      },
-    });
-  }
+
+  const nombreNormalizado = nombreSorteado.toLowerCase();
+
+  const imagenConfeti =
+    confetiMap[nombreNormalizado] ||
+    `https://api.dicebear.com/7.x/bottts-neutral/svg?seed=${nombreSorteado}`;
+
+  confetti({
+    spread: 360,
+    ticks: 200,
+    gravity: 1,
+    decay: 0.94,
+    startVelocity: 30,
+    particleCount: 100,
+    scalar: 4,
+    shapes: ["image"],
+    shapeOptions: {
+      image: [
+        {
+          src: imagenConfeti,
+          width: 32,
+          height: 32,
+        },
+      ],
+    },
+  });
 }
 
 function actualizarBotones() {

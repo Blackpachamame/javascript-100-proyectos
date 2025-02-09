@@ -24,6 +24,7 @@ Este es un proyecto interactivo que permite a los usuarios agregar amigos a una 
 ### 📌 Recursos útiles
 - [DiceBear API](https://www.dicebear.com/): Generación de avatares aleatorios.
 - [CSS Pattern](https://css-pattern.com/): Background patterns.
+- [Confetti](https://confetti.js.org/): Explosiones de confeti.
 
 ## 🎁 Contribuciones
 
