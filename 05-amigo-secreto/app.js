@@ -35,12 +35,21 @@ input.addEventListener("keydown", (e) => {
   }
 });
 
+function mostrarLista() {
+  if (amigos.length > 0) {
+    mensajeListaVacia.style.display = "none";
+    listaAmigos.classList.add("list__items--visible");
+  } else {
+    mensajeListaVacia.style.display = "block";
+  }
+}
+
 function agregarAmigo() {
   const nombre = input.value.trim();
   errorMensaje.textContent = "";
 
   if (!nombre) {
-    mostrarError("⚠️ Por favor, ingresa un nombre válido.");
+    mostrarError("⚠️ Por favor, ingrese un nombre.");
     return;
   }
 
@@ -63,18 +72,20 @@ function mostrarError(mensaje) {
 function agregarElementoLista(nombre) {
   const li = document.createElement("li");
   li.classList.add("list__item");
+  li.id = nombre;
   li.innerHTML = `
-        <img src="${generarAvatar(
-          nombre
-        )}" alt="Avatar de ${nombre}" class="list__avatar">
-        <span class="list__name">${nombre}</span>
+        <div class="list__avatar-container">
+            <img src="${generarAvatar(
+              nombre
+            )}" alt="Avatar de ${nombre}" class="list__avatar">
+            <span class="list__name">${nombre}</span>
+        </div>
+        <button onclick="eliminarAmigo('${nombre}')" class="list__delete-btn" aria-label="Eliminar amigo ${nombre}">
+            <img src="assets/icon-close.svg" alt="Cerrar" class="list__delete-icon">
+        </button>
     `;
   listaAmigos.appendChild(li);
-
-  if (amigos.length > 0) {
-    mensajeListaVacia.style.display = "none";
-    listaAmigos.classList.add("list__items--visible");
-  }
+  mostrarLista();
 }
 
 function resetearLista() {
@@ -94,7 +105,7 @@ function sortearAmigo() {
   }
 
   const indiceAleatorio = Math.floor(Math.random() * amigos.length);
-  const nombreSorteado = amigos[indiceAleatorio];
+  const nombreSorteado = amigos.splice(indiceAleatorio, 1)[0];
 
   resultadoTexto.textContent = `🎉 ${nombreSorteado} 🎁`;
   imagenSorteo.src = generarAvatar(nombreSorteado);
@@ -124,6 +135,23 @@ function sortearAmigo() {
       ],
     },
   });
+
+  const amigoElement = document.getElementById(nombreSorteado);
+  if (amigoElement) {
+    amigoElement.remove();
+  }
+  actualizarBotones();
+}
+
+function eliminarAmigo(nombre) {
+  let indice = amigos.indexOf(nombre);
+  amigos.splice(indice, 1);
+  const amigoElement = document.getElementById(nombre);
+  if (amigoElement) {
+    amigoElement.remove();
+  }
+  mostrarLista();
+  actualizarBotones();
 }
 
 function actualizarBotones() {

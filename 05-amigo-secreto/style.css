@@ -43,6 +43,10 @@ body {
   padding: 20px;
 }
 
+img {
+  max-width: 100%;
+}
+
 /* 📌 Contenedor principal */
 .container {
   background: var(--bg-1);
@@ -184,24 +188,51 @@ body {
 
 /* 👤 Ítem de la lista */
 .list__item {
-  display: flex;
+  display: grid;
   align-items: center;
+  grid-template-columns: auto 26px;
+  justify-content: space-between;
   background: var(--color-white);
   padding: 8px 12px;
   border-radius: 10px;
   font-size: 16px;
+  gap: 10px;
+}
+
+.list__avatar-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
 }
 
 .list__avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  margin-right: 10px;
 }
 
 .list__name {
   font-size: 18px;
   font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.list__delete-btn {
+  width: 26px;
+  height: 26px;
+  background-color: transparent;
+  padding: 2px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.list__delete-btn:hover {
+  border-color: var(--color-secondary);
 }
 
 /* 🎛️ Controles */
@@ -231,7 +262,7 @@ body {
 .button img {
   width: 40px;
   border-radius: 8px;
-  padding: 8px;
+  padding: 7px;
   margin-right: 6px;
 }
 
@@ -281,13 +312,27 @@ body {
 
 /* 📱 Responsividad */
 @media screen and (max-width: 600px) {
+  .container {
+    padding: 16px;
+  }
+
+  .list,
+  .controls {
+    padding: 10px;
+  }
+
   .button {
     padding: 3px;
     font-size: 14px;
   }
 
-  .button img {
-    padding: 6px;
+  .list__avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .list__name {
+    font-size: 16px;
   }
 }
 
@@ -308,5 +353,14 @@ body {
 
   .button {
     padding: 0px;
+  }
+
+  .list__avatar {
+    width: 30px;
+    height: 30px;
+  }
+
+  .list__name {
+    font-size: 15px;
   }
 }
