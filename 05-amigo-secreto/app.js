@@ -36,12 +36,9 @@ input.addEventListener("keydown", (e) => {
 });
 
 function mostrarLista() {
-  if (amigos.length > 0) {
-    mensajeListaVacia.style.display = "none";
-    listaAmigos.classList.add("list__items--visible");
-  } else {
-    mensajeListaVacia.style.display = "block";
-  }
+  const hayAmigos = amigos.length > 0;
+  mensajeListaVacia.style.display = hayAmigos ? "none" : "block";
+  listaAmigos.classList.toggle("list__items--visible", hayAmigos);
 }
 
 function agregarAmigo() {
@@ -136,20 +133,13 @@ function sortearAmigo() {
     },
   });
 
-  const amigoElement = document.getElementById(nombreSorteado);
-  if (amigoElement) {
-    amigoElement.remove();
-  }
+  document.getElementById(nombreSorteado)?.remove();
   actualizarBotones();
 }
 
 function eliminarAmigo(nombre) {
-  let indice = amigos.indexOf(nombre);
-  amigos.splice(indice, 1);
-  const amigoElement = document.getElementById(nombre);
-  if (amigoElement) {
-    amigoElement.remove();
-  }
+  amigos = amigos.filter((amigo) => amigo !== nombre);
+  document.getElementById(nombre)?.remove();
   mostrarLista();
   actualizarBotones();
 }
