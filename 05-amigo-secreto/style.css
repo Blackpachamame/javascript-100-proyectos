@@ -310,6 +310,15 @@ img {
   color: var(--color-white);
 }
 
+#confetti {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
 /* 📱 Responsividad */
 @media screen and (max-width: 600px) {
   .container {
@@ -338,13 +347,16 @@ img {
 
 @media screen and (max-width: 350px) {
   body {
+    background: var(--bg-1);
     padding: 0;
+    gap: 10px;
   }
 
   .container {
-    min-height: 100vh;
+    min-height: calc(100vh - 39px);
     border: none;
     border-radius: 0;
+    box-shadow: none;
   }
 
   .list__empty {
@@ -362,5 +374,9 @@ img {
 
   .list__name {
     font-size: 15px;
+  }
+
+  footer {
+    margin-bottom: 5px;
   }
 }
