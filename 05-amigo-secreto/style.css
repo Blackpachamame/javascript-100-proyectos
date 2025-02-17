@@ -34,7 +34,7 @@ body {
     linear-gradient(45deg, var(--l2)) calc(var(--s) / 2) calc(var(--s) / 2),
     linear-gradient(-45deg, var(--l1)) var(--c2);
   background-size: calc(2 * var(--s)) var(--s), var(--s) var(--s);
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,6 +81,10 @@ img {
   font-weight: 900;
   color: var(--color-white);
   margin-block: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 270px;
 }
 
 /* ✏️ Formulario */
@@ -310,6 +314,7 @@ img {
   color: var(--color-white);
 }
 
+/* 🎉 Confetti */
 #confetti {
   position: absolute;
   top: 0;
@@ -353,7 +358,7 @@ img {
   }
 
   .container {
-    min-height: calc(100vh - 39px);
+    min-height: calc(100dvh - 39px);
     border: none;
     border-radius: 0;
     box-shadow: none;

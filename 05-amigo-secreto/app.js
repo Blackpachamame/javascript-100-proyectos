@@ -148,3 +148,8 @@ function actualizarBotones() {
   buttonPlay.disabled = amigos.length < 2;
   buttonReset.disabled = amigos.length === 0;
 }
+/*
+- Agregar botón para apagar/activar sonido
+- Agregar sonidos
+- Chequear que los nombres no se repitan considerando mayusculas o minusculas
+*/
