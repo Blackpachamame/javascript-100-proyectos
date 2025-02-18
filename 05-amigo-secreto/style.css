@@ -49,6 +49,7 @@ img {
 
 /* 📌 Contenedor principal */
 .container {
+  position: relative;
   background: var(--bg-1);
   width: 100%;
   max-width: 400px;
@@ -284,6 +285,32 @@ img {
 
 .button--reset:hover {
   box-shadow: 0px 0px 2px 2px var(--color-highlight);
+}
+
+/* 🔊 Sonido */
+.button__sound {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 5px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.button__sound:hover {
+  box-shadow: 0px 0px 2px 2px var(--color-white-transparent);
+}
+
+.sound-on {
+  content: url("assets/sound-on.svg");
+}
+
+.sound-off {
+  content: url("assets/sound-off.svg");
 }
 
 /* 🎭 Botones deshabilitados */

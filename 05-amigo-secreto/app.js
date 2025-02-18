@@ -1,4 +1,5 @@
 let amigos = [];
+let sonidoActivado = true;
 const input = document.getElementById("amigo");
 const buttonPlay = document.getElementById("button-play");
 const buttonReset = document.getElementById("button-reset");
@@ -21,6 +22,32 @@ const confetiMap = {
   kike: "./assets/rick.png",
   david: "./assets/troll.png",
 };
+const sonidos = {
+  play: new Audio("assets/sonido-play.wav"),
+  reset: new Audio("assets/sonido-reset.mp3"),
+  active: new Audio("assets/sonido-on.mp3"),
+  error: new Audio("assets/sonido-error.mp3"),
+};
+
+function reproducirSonido(tipo) {
+  if (sonidoActivado && sonidos[tipo]) {
+    sonidos[tipo].play();
+  }
+}
+
+function activarSonido() {
+  sonidoActivado = !sonidoActivado;
+  const sonidoIcono = document
+    .getElementById("button-sound")
+    .querySelector("img");
+
+  sonidoIcono.classList.toggle("sound-on", sonidoActivado);
+  sonidoIcono.classList.toggle("sound-off", !sonidoActivado);
+  sonidoIcono.alt = sonidoActivado ? "Sonido Activado" : "Sonido Desactivado";
+  if (sonidoActivado) {
+    reproducirSonido("active");
+  }
+}
 
 function generarAvatar(nombre) {
   return `https://api.dicebear.com/7.x/bottts-neutral/svg?seed=${encodeURIComponent(
@@ -50,7 +77,7 @@ function agregarAmigo() {
     return;
   }
 
-  if (amigos.includes(nombre)) {
+  if (amigos.some((amigo) => amigo.toLowerCase() === nombre.toLowerCase())) {
     mostrarError("⚠️ Este nombre ya ha sido agregado.");
     return;
   }
@@ -63,6 +90,7 @@ function agregarAmigo() {
 
 function mostrarError(mensaje) {
   errorMensaje.textContent = mensaje;
+  reproducirSonido("error");
   setTimeout(() => (errorMensaje.textContent = ""), 3000);
 }
 
@@ -92,6 +120,7 @@ function resetearLista() {
   mensajeListaVacia.style.display = "block";
   resultadoTexto.textContent = "Amigo Secreto";
   imagenSorteo.src = "assets/amigo-secreto.jpg";
+  reproducirSonido("reset");
   actualizarBotones();
 }
 
@@ -108,7 +137,7 @@ function sortearAmigo() {
   imagenSorteo.src = generarAvatar(nombreSorteado);
 
   const nombreNormalizado = nombreSorteado.toLowerCase();
-
+  reproducirSonido("play");
   const imagenConfeti =
     confetiMap[nombreNormalizado] ||
     `https://api.dicebear.com/7.x/bottts-neutral/svg?seed=${nombreSorteado}`;
@@ -148,8 +177,3 @@ function actualizarBotones() {
   buttonPlay.disabled = amigos.length < 2;
   buttonReset.disabled = amigos.length === 0;
 }
-/*
-- Agregar botón para apagar/activar sonido
-- Agregar sonidos
-- Chequear que los nombres no se repitan considerando mayusculas o minusculas
-*/
