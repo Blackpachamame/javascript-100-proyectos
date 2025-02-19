@@ -113,17 +113,6 @@ function agregarElementoLista(nombre) {
   mostrarLista();
 }
 
-function resetearLista() {
-  amigos = [];
-  listaAmigos.innerHTML = "";
-  listaAmigos.classList.remove("list__items--visible");
-  mensajeListaVacia.style.display = "block";
-  resultadoTexto.textContent = "Amigo Secreto";
-  imagenSorteo.src = "assets/amigo-secreto.jpg";
-  reproducirSonido("reset");
-  actualizarBotones();
-}
-
 function sortearAmigo() {
   if (amigos.length < 2) {
     mostrarError("⚠️ Debes agregar al menos 2 amigos para sortear.");
@@ -166,14 +155,29 @@ function sortearAmigo() {
   actualizarBotones();
 }
 
-function eliminarAmigo(nombre) {
-  amigos = amigos.filter((amigo) => amigo !== nombre);
-  document.getElementById(nombre)?.remove();
-  mostrarLista();
-  actualizarBotones();
-}
-
 function actualizarBotones() {
   buttonPlay.disabled = amigos.length < 2;
   buttonReset.disabled = amigos.length === 0;
+}
+
+function eliminarAmigo(nombre) {
+  if (amigos.length === 1) {
+    resetearLista();
+  } else {
+    amigos = amigos.filter((amigo) => amigo !== nombre);
+    document.getElementById(nombre)?.remove();
+    mostrarLista();
+    actualizarBotones();
+  }
+}
+
+function resetearLista() {
+  amigos = [];
+  listaAmigos.innerHTML = "";
+  listaAmigos.classList.remove("list__items--visible");
+  mensajeListaVacia.style.display = "block";
+  resultadoTexto.textContent = "Amigo Secreto";
+  imagenSorteo.src = "assets/amigo-secreto.jpg";
+  reproducirSonido("reset");
+  actualizarBotones();
 }
