@@ -2,7 +2,7 @@
 
 Este es un proyecto interactivo que permite a los usuarios agregar amigos a una lista y realizar un **sorteo aleatorio** para determinar quién será el "amigo secreto". ¡Ideal para juegos y dinámicas de intercambio de regalos!
 
-<img src="assets/preview.jpg"></img>
+<img src="assets/images/preview.jpg"></img>
 
 ### 💻 [Ver en Vivo](https://blackpachamame.github.io/javascript-100-proyectos/05-amigo-secreto/)
 

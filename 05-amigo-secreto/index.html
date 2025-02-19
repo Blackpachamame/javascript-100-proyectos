@@ -24,7 +24,8 @@
 <body>
     <main class="container">
         <header class="header">
-            <img id="imagenAmigoSecreto" class="header__image" src="assets/amigo-secreto.jpg" alt="Amigo Secreto">
+            <img id="imagenAmigoSecreto" class="header__image" src="assets/images/amigo-secreto.jpg"
+                alt="Amigo Secreto">
             <h1 id="resultado" class="header__title" aria-live="polite">Amigo Secreto</h1>
         </header>
 
@@ -32,7 +33,7 @@
             <div class="form__group">
                 <input id="amigo" class="form__input" type="text" placeholder="Añadir amigo">
                 <button class="form__button" onclick="agregarAmigo()">
-                    <img class="form__button-icon" src="assets/icon-arrow.svg" alt="Añadir amigo">
+                    <img class="form__button-icon" src="assets/icons/arrow.svg" alt="Añadir amigo">
                 </button>
             </div>
             <p id="error" class="form__error"></p>
@@ -47,18 +48,18 @@
         <section class="controls">
             <button class="button button--play" id="button-play" onclick="sortearAmigo()"
                 aria-label="Sortear amigo secreto" disabled>
-                <img src="assets/icon-gift.svg" alt="Ícono para sortear">
+                <img src="assets/icons/gift.svg" alt="Ícono para sortear">
                 Sortear
             </button>
             <button class="button button--reset" id="button-reset" onclick="resetearLista()" aria-label="Resetear lista"
                 disabled>
-                <img src="assets/icon-restart.svg" alt="Ícono para resetear">
+                <img src="assets/icons/restart.svg" alt="Ícono para resetear">
                 Reiniciar
             </button>
         </section>
 
         <button class="button__sound" id="button-sound" onclick="activarSonido()" aria-label="Sonido">
-            <img src="assets/sound-on.svg" alt="Ícono para activar/desactivar sonido">
+            <img src="assets/icons/sound-on.svg" alt="Ícono para activar/desactivar sonido">
         </button>
     </main>
     <footer class="footer">

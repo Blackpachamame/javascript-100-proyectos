@@ -306,11 +306,11 @@ img {
 }
 
 .sound-on {
-  content: url("assets/sound-on.svg");
+  content: url("assets/icons/sound-on.svg");
 }
 
 .sound-off {
-  content: url("assets/sound-off.svg");
+  content: url("assets/icons/sound-off.svg");
 }
 
 /* 🎭 Botones deshabilitados */

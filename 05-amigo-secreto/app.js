@@ -9,24 +9,24 @@ const listaAmigos = document.getElementById("listaAmigos");
 const resultadoTexto = document.getElementById("resultado");
 const mensajeListaVacia = document.querySelector(".list__empty");
 const confetiMap = {
-  sebastian: "./assets/calamardo.png",
-  seba: "./assets/calamardo.png",
-  vanesa: "./assets/otaku2.png",
-  vane: "./assets/otaku2.png",
-  luneska: "./assets/otaku.png",
-  diego: "./assets/krilin.png",
-  samito: "./assets/saitama.png",
-  nicolas: "./assets/fry.png",
-  nico: "./assets/fry.png",
-  nicolás: "./assets/fry.png",
-  kike: "./assets/rick.png",
-  david: "./assets/troll.png",
+  sebastian: "./assets/confetti/calamardo.png",
+  seba: "./assets/confetti/calamardo.png",
+  vanesa: "./assets/confetti/otaku2.png",
+  vane: "./assets/confetti/otaku2.png",
+  luneska: "./assets/confetti/otaku.png",
+  diego: "./assets/confetti/krilin.png",
+  samito: "./assets/confetti/saitama.png",
+  nicolas: "./assets/confetti/fry.png",
+  nico: "./assets/confetti/fry.png",
+  nicolás: "./assets/confetti/fry.png",
+  kike: "./assets/confetti/rick.png",
+  david: "./assets/confetti/troll.png",
 };
 const sonidos = {
-  play: new Audio("assets/sonido-play.wav"),
-  reset: new Audio("assets/sonido-reset.mp3"),
-  active: new Audio("assets/sonido-on.mp3"),
-  error: new Audio("assets/sonido-error.mp3"),
+  play: new Audio("assets/sounds/play.wav"),
+  reset: new Audio("assets/sounds/reset.mp3"),
+  active: new Audio("assets/sounds/on.mp3"),
+  error: new Audio("assets/sounds/error.mp3"),
 };
 
 function reproducirSonido(tipo) {
@@ -106,7 +106,7 @@ function agregarElementoLista(nombre) {
             <span class="list__name">${nombre}</span>
         </div>
         <button onclick="eliminarAmigo('${nombre}')" class="list__delete-btn" aria-label="Eliminar amigo ${nombre}">
-            <img src="assets/icon-close.svg" alt="Cerrar" class="list__delete-icon">
+            <img src="assets/icons/close.svg" alt="Cerrar" class="list__delete-icon">
         </button>
     `;
   listaAmigos.appendChild(li);
@@ -118,6 +118,7 @@ function sortearAmigo() {
     mostrarError("⚠️ Debes agregar al menos 2 amigos para sortear.");
     return;
   }
+  buttonPlay.disabled = true;
 
   const indiceAleatorio = Math.floor(Math.random() * amigos.length);
   const nombreSorteado = amigos.splice(indiceAleatorio, 1)[0];
@@ -152,7 +153,9 @@ function sortearAmigo() {
   });
 
   document.getElementById(nombreSorteado)?.remove();
-  actualizarBotones();
+  setTimeout(() => {
+    actualizarBotones();
+  }, 3000);
 }
 
 function actualizarBotones() {
@@ -177,7 +180,7 @@ function resetearLista() {
   listaAmigos.classList.remove("list__items--visible");
   mensajeListaVacia.style.display = "block";
   resultadoTexto.textContent = "Amigo Secreto";
-  imagenSorteo.src = "assets/amigo-secreto.jpg";
+  imagenSorteo.src = "assets/images/amigo-secreto.jpg";
   reproducirSonido("reset");
   actualizarBotones();
 }
