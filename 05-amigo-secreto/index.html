@@ -40,9 +40,9 @@
         </section>
 
         <section class="list">
-            <h2 class="list__title">Lista de Amigos</h2>
+            <h2 id="listaAmigosTitle" class="list__title">Lista de Amigos</h2>
             <p class="list__empty">Aún no has agregado amigos a la lista.</p>
-            <ul id="listaAmigos" class="list__items" role="list"></ul>
+            <ul id="listaAmigos" class="list__items" role="list" aria-labelledby="listaAmigosTitle"></ul>
         </section>
 
         <section class="controls">
@@ -58,7 +58,8 @@
             </button>
         </section>
 
-        <button class="button__sound" id="button-sound" onclick="activarSonido()" aria-label="Sonido">
+        <button class="button__sound" id="button-sound" onclick="activarSonido()" aria-label="Sonido"
+            aria-pressed="true">
             <img src="assets/icons/sound-on.svg" alt="Ícono para activar/desactivar sonido">
         </button>
     </main>

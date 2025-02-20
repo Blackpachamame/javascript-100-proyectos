@@ -37,13 +37,16 @@ function reproducirSonido(tipo) {
 
 function activarSonido() {
   sonidoActivado = !sonidoActivado;
-  const sonidoIcono = document
-    .getElementById("button-sound")
-    .querySelector("img");
+  const sonidoBoton = document.getElementById("button-sound");
+  const sonidoIcono = sonidoBoton.querySelector("img");
 
-  sonidoIcono.classList.toggle("sound-on", sonidoActivado);
-  sonidoIcono.classList.toggle("sound-off", !sonidoActivado);
+  sonidoIcono.classList.remove("sound-on", "sound-off");
+  sonidoIcono.classList.add(sonidoActivado ? "sound-on" : "sound-off");
+
+  sonidoBoton.setAttribute("aria-pressed", sonidoActivado);
+
   sonidoIcono.alt = sonidoActivado ? "Sonido Activado" : "Sonido Desactivado";
+
   if (sonidoActivado) {
     reproducirSonido("active");
   }
@@ -164,13 +167,21 @@ function actualizarBotones() {
 }
 
 function eliminarAmigo(nombre) {
+  const item = document.getElementById(nombre);
+
+  if (!item) return;
+
   if (amigos.length === 1) {
     resetearLista();
   } else {
-    amigos = amigos.filter((amigo) => amigo !== nombre);
-    document.getElementById(nombre)?.remove();
-    mostrarLista();
-    actualizarBotones();
+    item.classList.add("list__item--removing");
+
+    setTimeout(() => {
+      amigos = amigos.filter((amigo) => amigo !== nombre);
+      item.remove();
+      mostrarLista();
+      actualizarBotones();
+    }, 390);
   }
 }
 
