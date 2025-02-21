@@ -11,7 +11,7 @@ const mensajeListaVacia = document.querySelector(".list__empty");
 const confetiMap = {
   sebastian: "./assets/confetti/calamardo.png",
   seba: "./assets/confetti/calamardo.png",
-  vanesa: "./assets/confetti/otaku2.png",
+  395039: "./assets/confetti/otaku2.png",
   vane: "./assets/confetti/otaku2.png",
   luneska: "./assets/confetti/otaku.png",
   diego: "./assets/confetti/krilin.png",
@@ -86,7 +86,7 @@ function agregarAmigo() {
   }
 
   if (nombre === "abuelita" || nombre === "Abuelita") {
-    console.log("👵 ¡Tatuarse es malo!");
+    console.log("👵 ¡Tatuarse es malo! ¡Coman sus vegetales!");
   }
 
   amigos.push(nombre);
