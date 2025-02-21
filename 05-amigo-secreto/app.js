@@ -12,7 +12,7 @@ const confetiMap = {
   sebastian: "./assets/confetti/calamardo.png",
   seba: "./assets/confetti/calamardo.png",
   395039: "./assets/confetti/otaku2.png",
-  kike: "./assets/confetti/rick.png",
+  raffa: "./assets/confetti/rick.png",
   luneska: "./assets/confetti/otaku.png",
   diego: "./assets/confetti/krilin.png",
   samito: "./assets/confetti/saitama.png",
