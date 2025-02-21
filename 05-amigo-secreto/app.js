@@ -85,6 +85,10 @@ function agregarAmigo() {
     return;
   }
 
+  if (nombre === "abuelita" || nombre === "Abuelita") {
+    console.log("👵 ¡Tatuarse es malo!");
+  }
+
   amigos.push(nombre);
   agregarElementoLista(nombre);
   input.value = "";
