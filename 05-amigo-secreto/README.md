@@ -31,5 +31,3 @@ Este es un proyecto interactivo que permite a los usuarios agregar amigos a una 
 ## 🎁 Contribuciones
 
 ¡Las contribuciones son bienvenidas! Si tienes ideas o mejoras, haz un **fork** del repositorio y envía un **pull request**. 💡
-  
-**Desarrollado con ❤️ por [el amor de tu vida](https://github.com/Blackpachamame).**
