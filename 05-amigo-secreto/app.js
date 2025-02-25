@@ -48,12 +48,13 @@ function activarSonido() {
   sonidoIcono.alt = sonidoActivado ? "Sonido Activado" : "Sonido Desactivado";
 
   if (!sonidoActivado) {
-    // 🔥 Detiene todos los sonidos en curso
     Object.values(sonidos).forEach((sonido) => {
-      sonido.pause();
-      //sonido.currentTime = 0; // Reinicia el tiempo de reproducción
+      sonido.volume = 0;
     });
   } else {
+    Object.values(sonidos).forEach((sonido) => {
+      sonido.volume = 1;
+    });
     reproducirSonido("active");
   }
 }
